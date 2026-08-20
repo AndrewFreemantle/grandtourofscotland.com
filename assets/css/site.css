@@ -251,8 +251,8 @@ abbr[title] {
 
 .brand__map {
   flex: none;
-  width: 1.9rem;
-  height: 1.8rem;
+  width: 2rem;
+  aspect-ratio: 196.7 / 173.45;
   background-color: currentcolor;
   -webkit-mask: url("../img/scotland-outline.svg") center / contain no-repeat;
   mask: url("../img/scotland-outline.svg") center / contain no-repeat;
@@ -456,20 +456,14 @@ abbr[title] {
   text-shadow: 0 2px 18px rgb(24 36 61 / 45%);
 }
 
+/* The map artwork ends in the rule under it, so it spans the whole wordmark. */
 .wordmark__map {
-  width: clamp(6.5rem, 26vw, 11rem);
-  aspect-ratio: 185 / 173;
-  margin-bottom: 0.35rem;
+  width: 100%;
+  aspect-ratio: 196.7 / 173.45;
+  margin-bottom: 0.65rem;
   background-color: currentcolor;
   -webkit-mask: url("../img/scotland-outline.svg") center / contain no-repeat;
   mask: url("../img/scotland-outline.svg") center / contain no-repeat;
-}
-
-.wordmark__rule {
-  width: min(19rem, 82%);
-  height: 3px;
-  margin-bottom: 0.35rem;
-  background: currentcolor;
 }
 
 .wordmark__grand {
@@ -485,13 +479,14 @@ abbr[title] {
 }
 
 .wordmark__scotland {
-  font-size: clamp(1.9rem, 9.5vw, 3.6rem);
+  font-size: clamp(1.9rem, 9.5vw, 2.9rem);
 }
 
 .wordmark__year {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  width: 100%;
+  gap: 0.35em;
   margin-top: 0.1rem;
   font-size: clamp(1.5rem, 7.5vw, 2.8rem);
 }
@@ -499,8 +494,8 @@ abbr[title] {
 .wordmark__year::before,
 .wordmark__year::after {
   content: "";
-  width: clamp(1.1rem, 5vw, 2.2rem);
-  height: 3px;
+  flex: 1 1 0;
+  height: 0.055em;
   background: currentcolor;
 }
 
@@ -843,6 +838,47 @@ abbr[title] {
 
 /* --- FAQ accordion ------------------------------------------------------ */
 
+.faq-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.faq-nav a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius);
+  background: var(--paper-shade);
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.faq-nav a:hover {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.faq-group {
+  max-width: var(--measure);
+  margin: clamp(1.75rem, 5vw, 2.5rem) auto 0.9rem;
+  color: var(--navy);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .faq {
   max-width: var(--measure);
   border-top: 1px solid var(--navy-line);
@@ -1177,8 +1213,7 @@ abbr[title] {
 }
 
 .site-footer__brand .brand__map {
-  width: 2.6rem;
-  height: 2.5rem;
+  width: 2.75rem;
 }
 
 .site-footer__title {
