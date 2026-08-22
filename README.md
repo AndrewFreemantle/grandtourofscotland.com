@@ -1,9 +1,9 @@
 # Grand Tour of Scotland
 
-Website for the Grand Tour of Scotland 2028 — a 2000km [Audax](https://www.audax.uk/event-details?id=14142) event around Scotland,
+Website for the Grand Tour of Scotland — a 2000km [Audax](https://www.audax.uk/event-details?id=14142) event around Scotland,
 starting in Dumfries on Monday 31 July 2028.
 
-The site is hand-written static HTML with one stylesheet and one small script. There is no build step:
+The site provides event information, and is static HTML with one stylesheet and one small javascript snippet. There is no build step:
 what is in this repository is served as-is.
 
 ## Pages
@@ -12,11 +12,11 @@ what is in this repository is served as-is.
 | --- | --- |
 | `index.html` | Home — hero, key facts, links to each section |
 | `about.html` | What the event is |
-| `route.html` | Start details, ferries, road conditions, draft route map |
-| `controls.html` | Condensed control list plus the full PDF download |
-| `gpx.html` | Route files / link to RwGPS |
-| `tracking.html` | Live tracking / trackers |
-| `faq.html` | Frequently asked questions |
+| `route.html` | Start details, ferries, road conditions, route map |
+| `controls.html` | Control list with times and facilities, full control info as PDF download |
+| `gpx.html` | Route files / link to [RwGPS](https://ridewithgps.com/routes/54428229) |
+| `tracking.html` | Live tracking / trackers info |
+| `faq.html` | Frequently Asked Questions |
 | `enter.html` | How to enter |
 | `contact.html` | Email contact |
 | `404.html` | Not found |
@@ -32,12 +32,9 @@ assets/downloads/        Full control information sheet (PDF)
 favicon.svg, apple-touch-icon.png, robots.txt, sitemap.xml
 ```
 
-The `resources/` folder holds the designer's source files (InDesign, PDF, photos) and is not published —
-see `.gitignore`.
-
 ## Local preview
 
-Any static server will do, for example:
+Any static web server will do, for example:
 
 ```bash
 python3 -m http.server 8000
@@ -72,6 +69,6 @@ control can be edited by hand — copy an existing `<tr>` and change the values.
 
 Ferry crossings are rows with `class="is-ferry"`.
 
-The full sheet — every column, including addresses and control sizes — is offered as a PDF download at
-`assets/downloads/gtos-2028-controls.pdf`. Replace that file when the control sheet is updated, and keep
-the condensed table in sync.
+The full control information sheet — addresses, dates and times, control sizes, facilities — is offered as a PDF download at
+`assets/downloads/grand-tour-of-scotland-audax-controls-2028.pdf`. Replace this file when control info changes, and keep
+the condensed table in sync with those changes.
